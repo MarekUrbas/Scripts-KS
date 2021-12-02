@@ -1,0 +1,12 @@
+txtSlowo = Controls.AddTextBox(50, 80)
+etykieta = Shapes.AddText("Podaj słowo")
+Shapes.Move(etykieta, 50, 50)
+definicja = Shapes.AddText("")
+Shapes.Move(definicja, 50, 120)
+
+Controls.TextTyped = pobierz
+
+Sub pobierz
+  slowo = Controls.GetTextBoxText(txtSlowo)
+  Shapes.SetText(definicja, Dictionary.GetDefinitionEnglishToEnglish(slowo))
+EndSub
