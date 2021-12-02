@@ -1,0 +1,14 @@
+GraphicsWindow.DrawBoundText(10, 10, 280, "Podaj wartość temperatury w stopniach Celsjusza, by przeliczyć ją na skalę Fahrenheita")
+tbxCelsjusz = Controls.AddTextBox(70, 60)
+btnPrzelicz = Controls.AddButton("Przelicz", 120, 90)
+
+GraphicsWindow.Width = 300
+GraphicsWindow.Height = 120
+
+Controls.ButtonClicked = przelicznik
+
+Sub przelicznik
+  c = Controls.GetTextBoxText(tbxCelsjusz)
+  f = c*1.8 + 32
+  GraphicsWindow.ShowMessage("Temperatura w skali Fahrenheita to: " +f, "Wynik")
+EndSub
